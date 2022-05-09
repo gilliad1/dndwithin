@@ -2,6 +2,8 @@ package main
 
 import (
 	"sync"
+
+	"github.com/jackc/pgx/v4/pgxpool"
 )
 
 const classListData string = "classlist"
@@ -22,6 +24,7 @@ type server struct {
 	magicCacheLock    sync.RWMutex
 	classSchoolLevels map[string]map[string]map[string]int
 	//spellsDB          string
+	dbConnection *pgxpool.Pool
 }
 
 func newServer() (*server, error) {

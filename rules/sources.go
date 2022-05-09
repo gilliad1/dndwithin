@@ -1,4 +1,4 @@
-package main
+package rules
 
 var sourceName map[string]string = map[string]string{
 	"stormwrack":                            "Stormwrack",
